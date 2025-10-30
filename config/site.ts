@@ -5,8 +5,7 @@ export const siteConfig = {
   description: "基于 Next.js 的前端导航网站",
   mainNav: [],
   links: {
-    twitter: "https://twitter.com/liwenka1",
-    github: "https://github.com/liwenka1/next-web-nav"
+    github: "https://github.com/youmikuang"
   }
 }
 
@@ -27,6 +26,30 @@ type NavData = {
 }
 
 export const NavData: NavData[] = [
+  {
+    title: "个人网站",
+    items: [
+      {
+        icon: "https://todo.gaoheng.top/assets/favicon.png",
+        title: "TODO List",
+        desc: "一个简单好用的待办事项应用",
+        link: "https://todo.gaoheng.top/"
+      },
+      {
+        icon: "https://resume.gaoheng.top/avatar.jpg",
+        title: "个人简历",
+        desc: "个人在线简历。",
+        link: "https://resume.gaoheng.top/"
+      },
+      {
+        icon: "https://vuex.vuejs.org/logo.png",
+        title: "成长时光机",
+        desc: "从幼儿园到大学，见证孩子成长的每一步，记录每一个成长瞬间。",
+        link: "https://time-machine.gaoheng.top/"
+      }
+    ]
+  },
+
   {
     title: "常用工具",
     items: [

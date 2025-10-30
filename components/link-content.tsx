@@ -10,13 +10,18 @@ export function LinkContent() {
   const { categories } = useConfigStore()
 
   return (
-    <div className="w-full pb-96 pt-4">
-      <div id="main" className="mx-auto w-full px-4 md:px-6">
+    <div className="w-full min-h-screen pb-32 pt-8">
+      <div id="main" className="mx-auto w-full max-w-7xl px-6 md:px-8">
         {categories.map((category, index) => {
           return (
-            <div id={String(index)} key={index} className="mb-12">
-              <div className="my-4">
-                <h1 className="mb-2 text-2xl font-bold text-primary/80 sm:text-3xl">{category.title}</h1>
+            <div id={String(index)} key={index} className="mb-16 scroll-mt-20">
+              <div className="mb-6">
+                <div className="flex items-center gap-4">
+                  <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
+                    {category.title}
+                  </h2>
+                  <div className="h-px flex-1 bg-gradient-to-r from-gray-300 via-gray-200 to-transparent dark:from-gray-700 dark:via-gray-800" />
+                </div>
               </div>
               <HoverEffect
                 items={category.items.map(({ title, desc, link, icon }) => ({
@@ -29,36 +34,6 @@ export function LinkContent() {
             </div>
           )
         })}
-        <div id = "contact" className="mb-12">
-          <div className="my-4">
-            <h1 className="mb-2 text-2xl font-bold text-primary/80 sm:text-3xl">联系我</h1>
-          </div>
-          <div>
-            你可以通过
-            <Link href="mailto:2020583117@qq.com" target="_blank" rel="noreferrer">
-              <span className="px-3 underline decoration-wavy hover:text-purple-500">Email</span>
-            </Link>
-            或者
-            <Link
-              href="https://weixin.sogou.com/weixin?type=1&query=kk%E6%83%B3%E5%BD%93%E7%A8%8B%E5%BA%8F%E5%91%98"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="px-3 underline decoration-wavy hover:text-purple-500">微信公众号</span>
-            </Link>
-            联系我
-          </div>
-          <div>
-            <Image
-              src="/weixin.jpg"
-              className="float-left md:w-1/4"
-              alt="kk想当程序员"
-              width={318}
-              height={318}
-              unoptimized
-            />
-          </div>
-        </div>
       </div>
     </div>
   )
